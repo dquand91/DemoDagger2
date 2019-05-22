@@ -29,6 +29,9 @@ public class DBHelper extends SQLiteOpenHelper {
     // Chỉ ra rằng lớp DBHelper sẽ được thêm vào Dependency Graph, có nghĩa là khi cần khởi tạo đối tượng DBHelper,
     // Dagger sẽ tìm đến phương thức khởi tạo được gắn Annotation @Inject này.
 
+    // Khi 1 nơi nào đó cần instance của DBHelper thì Dagger sẽ tự động tới chỗ
+        // "constructor có gắn @Inject" này của DBHelper và tạo mới 1 instance
+
     // @MyApplicationContext do mình custom mà có
     // @DatabaseInfo cũng do mình custom mà có
 

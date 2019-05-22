@@ -12,6 +12,8 @@ public class SharedPrefsHelper {
 
     // Annotation @Inject ở hàm khởi tạo cho phép thêm lớp này vào Dependency Graph
     // và Dagger có thể sử dụng hàm khởi tạo này khi cần.
+    // Khi 1 nơi nào đó cần instance của SharedPrefsHelper thì Dagger sẽ tự động tới chỗ
+        // "constructor có gắn @Inject" này của SharedPrefsHelper và tạo mới 1 instance
     @Inject
     public SharedPrefsHelper(SharedPreferences sharedPreferences) {
         this.mSharedPreferences = sharedPreferences;

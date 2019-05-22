@@ -19,9 +19,10 @@ public class DataManager {
     // Khi Dagger cần khởi tạo DataManager, nó sẽ tìm trong Dependency Graph các class cần có trong hàm khởi tạo của lớp này.
     // Ở đây là Context, SharePrefsHelper, và DBHelper.
     // SharePrefsHelper, và DBHelper đã được thêm vào graph thông qua Annotation @Inject nên Dagger sẽ tự động gọi hàm khởi tạo của 2 lớp này ra.
-    // Vậy còn @ApplicationContext Context context  sẽ được Dagger tìm đến class ApplicationComponent do mình tạo.
+        // Di chuyển đến class SharePrefsHelper và DBHelper => sẽ thấy phần constructor đã được gắn @Inject
+    // Trong class ta thấy có @ApplicationContext Context context => nó sẽ được Dagger tìm đến class ApplicationComponent do mình tạo.
     //      Mình cần tạo thêm 3 class nữa: 1 là Application để mình khai báo và tiêm (inject) đúng Application Context vào Dagger
-    //                                      2 là ApplicationComponent để để liên kế giữa class Application và class ApplicationModule
+    //                                      2 là ApplicationComponent để liên kế giữa class Application và class ApplicationModule
     //                                      3 là ApplicationModule để cung cấp cái Application Context đã được tiêm vào Dagger
 
     @Inject

@@ -18,6 +18,7 @@ public class ActivityModule {
         this.mActivity = mActivity;
     }
 
+    // Thêm @MyActivityContext để Dagger biết mà trả đúng kiểu dữ liệu khi dúng @Provides
     @Provides
     @MyActivityContext
     public Activity provideActivity() {
